@@ -3,6 +3,11 @@ body {
   color: #2e2f42;
   padding: 36px 156px;
   width: 1440px;
+  background-color: #ffffff;
+}
+
+p {
+  margin: 0;
 }
 
 .go-back {
@@ -98,8 +103,4 @@ button[disabled] {
   text-align: center;
   line-height: 1.5;
   text-transform: uppercase;
-}
-
-.flatpickr-day.selected {
-  background: #f00;
 }
