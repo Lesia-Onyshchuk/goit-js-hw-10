@@ -1,26 +1,37 @@
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const form = document.querySelector('.form');
-const input = document.querySelector('input[name="choice"]:checked');
-const button = document.querySelector('button')
 
-button.addEventListener('click', submitFoo
-    .then(value => console.log(value)),
-    .catch(error => console.log(error)))
+form.addEventListener('submit', submitFoo);
 
-const submitFoo = (event) => {
-    // Create promise
+function submitFoo(event) {
+  event.preventDefault();
+
+  const state = event.target.elements.state.value;
+  const delay = event.target.elements.delay.value;
+
+  function makeDelay(delay) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (event.target.value === 'fulfilled') {
-                resolve('Success! Value passed to resolve function');
-            } else {
-                reject('Error! Error passed to reject function');
-            }
-        }, 2000);
+      setTimeout(() => {
+        if (state === 'fulfilled') {
+          resolve(`✅ Fulfilled promise in ${delay}ms`);
+          iziToast.success({
+            title: '',
+            message: `Fulfilled promise in ${delay}ms`,
+          });
+        } else {
+          reject(`❌ Rejected promise in ${delay}ms`);
+          iziToast.error({
+            title: '',
+            message: `Rejected promise in ${delay}ms`,
+          });
+        }
+      }, delay);
     });
+  }
+
+  makeDelay(delay)
+    .then(success => console.log(success))
+    .catch(error => console.log(error));
 }
-// Registering promise callbacks
-// promise
-//     .then(event.target.value => console.log(input.value))
-//         .catch (error => console.log(error))
-
-
