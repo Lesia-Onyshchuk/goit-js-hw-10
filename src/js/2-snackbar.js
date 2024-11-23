@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.form');
+const button = document.querySelector('button');
 
 form.addEventListener('submit', submitFoo);
 
@@ -44,4 +45,6 @@ function submitFoo(event) {
   makeDelay(delay)
     .then(success => console.log(success))
     .catch(error => console.log(error));
+
+  form.reset();
 }
