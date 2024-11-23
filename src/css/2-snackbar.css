@@ -66,14 +66,17 @@ fieldset {
   box-sizing: border-box;
   margin-top: 16px;
   width: 360px;
-  height: 64px;
+  height: 78px;
+  border: 1px solid #808080;
   border-radius: 4px;
-  stroke-width: 1px;
-  stroke: #808080;
   display: flex;
   justify-content: center;
-  /* align-items: flex-end; */
-  /* padding-bottom: 8px; */
+  gap: 48px;
+  transition: border 250ms ease-in-out;
+}
+
+fieldset:hover {
+  border: 1px solid #000000;
 }
 
 legend {
@@ -84,10 +87,9 @@ legend {
   letter-spacing: 0.04em;
 }
 
-.radio {
+.box-radio {
   display: flex;
-  gap: 48px;
-  padding-bottom: 8px;
+  gap: 8px;
 }
 
 .label-radio {
@@ -96,10 +98,6 @@ legend {
   font-size: 16px;
   line-height: 1.5;
   color: currentColor;
-  display: flex;
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 input[type='radio'] {
@@ -107,6 +105,11 @@ input[type='radio'] {
   border-radius: 14px;
   width: 20px;
   height: 20px;
+  transition: border 250ms ease-in-out;
+}
+
+input[type='radio']:hover {
+  border: 1px solid #000;
 }
 
 button {

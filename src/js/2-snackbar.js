@@ -17,14 +17,24 @@ function submitFoo(event) {
         if (state === 'fulfilled') {
           resolve(`✅ Fulfilled promise in ${delay}ms`);
           iziToast.success({
-            title: '',
+            title: 'OK',
             message: `Fulfilled promise in ${delay}ms`,
+            position: 'topRight',
+            backgroundColor: '#59A10D',
+            messageColor: '#ffffff',
+            messageSize: '16px',
+            titleColor: '#ffffff',
           });
         } else {
           reject(`❌ Rejected promise in ${delay}ms`);
           iziToast.error({
-            title: '',
+            title: 'Error',
             message: `Rejected promise in ${delay}ms`,
+            position: 'topRight',
+            backgroundColor: '#ef4040',
+            messageColor: '#ffffff',
+            messageSize: '16px',
+            titleColor: '#ffffff',
           });
         }
       }, delay);

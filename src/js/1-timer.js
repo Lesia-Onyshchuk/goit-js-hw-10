@@ -25,14 +25,24 @@ const options = {
     console.log(userSelectedDate);
     if (userSelectedDate.getTime() <= Date.now()) {
       iziToast.error({
-        title: '',
+        title: 'Error',
         message: 'Please choose a date in the future',
+        position: 'topRight',
+        backgroundColor: '#ef4040',
+        messageColor: '#ffffff',
+        messageSize: '16px',
+        titleColor: '#ffffff',
       });
       button.setAttribute('disabled', true);
     } else if (userSelectedDate.getTime() > Date.now()) {
       iziToast.success({
-        title: '',
-        message: 'Press Start!',
+        title: 'OK',
+        message: `Press Start!`,
+        position: 'topRight',
+        backgroundColor: '#59A10D',
+        messageColor: '#ffffff',
+        messageSize: '16px',
+        titleColor: '#ffffff',
       });
       button.removeAttribute('disabled');
     }

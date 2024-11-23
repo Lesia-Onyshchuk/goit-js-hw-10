@@ -23,15 +23,25 @@
 
         <fieldset>
           <legend>State</legend>
-          <div class="radio">
-            <label class="label-radio">
-              <input type="radio" name="state" value="fulfilled" required />
-              Fulfilled
-            </label>
-            <label class="label-radio">
-              <input type="radio" name="state" value="rejected" required />
-              Rejected
-            </label>
+          <div class="box-radio">
+            <input
+              id="fulfilled"
+              type="radio"
+              name="state"
+              value="fulfilled"
+              required
+            />
+            <label for="fulfilled" class="label-radio">Fulfilled</label>
+          </div>
+          <div class="box-radio">
+            <input
+              id="rejected"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            <label for="rejected" class="label-radio">Rejected</label>
           </div>
         </fieldset>
 
